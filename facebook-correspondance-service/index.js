@@ -9,7 +9,7 @@ bot.on('message', async message => {
     await sender.fetch('first_name');
 
     const out = new Elements();
-    out.add({text: `Hey ${sender.first_name}, NioBi here! How are you?`});
+    out.add({text: `Hey ${sender.first_name}, NioBi here! How are you ?`});
 
     await bot.send(sender.id, out);
 });
