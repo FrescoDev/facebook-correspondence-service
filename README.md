@@ -2,10 +2,10 @@
 
 This service is responsible for being the central point of communication for correspondance between the system and the chat client. 
 
-DEV URL: [url]
-LIVE URL: [url]
+DEV URL: [d-https://fb-correspondence-service.herokuapp.com/]
+LIVE URL: [https://fb-correspondence-service.herokuapp.com/]
 
-[![Build Status]([svg_url])]([url])
+[![Build Status](https://travis-ci.org/FrescoDev/facebook-correspondence-service.svg?branch=master)](https://travis-ci.org/FrescoDev/facebook-correspondence-service)
 
 ### Prerequisities
 
@@ -60,6 +60,6 @@ Example: http:/{url}/meta
 Response body:
 
     {
-        "description": "facebook-correspondance-servicee",
+        "description": "facebook-correspondance-service",
         "status": "ok"
     }
