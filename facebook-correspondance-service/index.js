@@ -17,6 +17,8 @@ bot.on('message', async message => {
     let body = await smallTalkResponse.json();
     let msgOut = body;
 
+    console.log(msgOut);
+    
     let out = new Elements();
     out.add({text: `Hey ${sender.first_name}, ${msgOut}`});
 
