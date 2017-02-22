@@ -15,7 +15,7 @@ bot.on('message', async message => {
     let smallTalkResponse = await request(`http://www.personalityforge.com/api/chat/?apiKey=eoSCUx78Dj8k0xJ2&chatBotID=3673&message=${msgIn}&externalID=1`);
 
     let body = await smallTalkResponse.json();
-    let msgOut = body.message.message;
+    let msgOut = body.message;
 
     let out = new Elements();
     out.add({text: `Hey ${sender.first_name}, ${msgOut}`});
