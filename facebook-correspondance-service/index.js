@@ -9,7 +9,8 @@ bot.on('message', async message => {
 
     await sender.fetch('first_name');
 
-    let msgIn = message.message.text;
+    console.log(message);
+    let msgIn = message.message;
     let smallTalkResponse = await request(`http://www.personalityforge.com/api/chat/?apiKey=eoSCUx78Dj8k0xJ2&chatBotID=3673&message=${msgIn}&externalID=1`);
     let msgOut = smallTalkResponse.message.message;
     let body = await msgOut.json();
