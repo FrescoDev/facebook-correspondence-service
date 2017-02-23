@@ -2,10 +2,10 @@ import settings from '../service-container/configuration';
 import maKeSmallTalk from './capabilities/make-small-talk'
 import {Bot, Elements} from 'facebook-messenger-bot';
 
-// BOT WORKER
-const bot = new Bot(settings.fb.myPageToken, settings.fb.myVerification);
+// WORKER
+const correspondent = new Bot(settings.fb.myPageToken, settings.fb.myVerification);
 
-bot.on('message', async message => {
+correspondent.on('message', async message => {
     const {sender, text} = message;
     const input = text;
 
@@ -16,7 +16,7 @@ bot.on('message', async message => {
     let output = new Elements();
     output.add({text: `Hey ${sender.first_name}, ${outputMessage}`});
 
-    await bot.send(sender.id, output);
+    await correspondent.send(sender.id, output);
 });
 
-export default bot
+export default correspondent
