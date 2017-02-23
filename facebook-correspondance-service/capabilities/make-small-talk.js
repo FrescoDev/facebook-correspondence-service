@@ -2,7 +2,7 @@ import request from 'requisition';
 import settings from '../../service-container/configuration/index'
 
 const makeSmallTalk = async(input) => {
-    const baseUrl = settings.personalityForge.baseurl;
+    const baseUrl = settings.personalityForge.baseUrl;
     const apiKey = settings.personalityForge.apiKey;
     const chatBotId = settings.personalityForge.chatBotId;
 

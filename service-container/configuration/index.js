@@ -21,7 +21,7 @@ const defaultConfig = {
   personalityForge :{
     baseUrl: 'http://www.personalityforge.com/api/chat/?',
     apiKey: process.env.PF_API_KEY,
-    chatBotId: process.env.PF_CHABOT_ID
+    chatBotId: process.env.PF_CHATBOT_ID
   }
 };
 
