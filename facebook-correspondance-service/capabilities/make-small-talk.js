@@ -1,7 +1,12 @@
 import request from 'requisition';
+import settings from '../../service-container/configuration/index'
 
 const makeSmallTalk = async(input) => {
-    let smallTalkFetchResponse = await request(`http://www.personalityforge.com/api/chat/?apiKey=eoSCUx78Dj8k0xJ2&chatBotID=3673&message=${input}&externalID=1`);
+    const baseUrl = settings.personalityForge.baseurl;
+    const apiKey = settings.personalityForge.apiKey;
+    const chatBotId = settings.personalityForge.chatBotId;
+
+    let smallTalkFetchResponse = await request(`${baseUrl}apiKey=${apiKey}&chatBotID=${chatBotId}&message=${input}&externalID=1`);
     let body = await smallTalkFetchResponse.json();
 
     if (body && body.message) {

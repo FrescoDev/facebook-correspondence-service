@@ -17,6 +17,11 @@ const defaultConfig = {
   fb: {
     myPageToken: process.env.FB_PAGE_TOKEN,
     myVerification: process.env.FB_VERIFICATION
+  },
+  personalityForge :{
+    baseUrl: 'http://www.personalityforge.com/api/chat/?',
+    apiKey: process.env.PF_API_KEY,
+    chatBotId: process.env.PF_CHABOT_ID
   }
 };
 
