@@ -1,22 +1,22 @@
-import settings from '../service-container/configuration';
 import maKeSmallTalk from './capabilities/make-small-talk'
-import {Bot, Elements} from 'facebook-messenger-bot';
-
-// WORKER
-const correspondent = new Bot(settings.fb.myPageToken, settings.fb.myVerification);
+import {Elements as Response} from 'facebook-messenger-bot';
+import correspondent from './correspondent-factory';
 
 correspondent.on('message', async message => {
     const {sender, text} = message;
-    const input = text;
+    const inputMessage = text;
 
+    // Get sender's name
     await sender.fetch('first_name');
 
-    let outputMessage = await maKeSmallTalk(input);
+    // Generate small talk based on input and assign to response msg
+    let responseMessage = await maKeSmallTalk(inputMessage);
 
-    let output = new Elements();
-    output.add({text: `Hey ${sender.first_name}, ${outputMessage}`});
+    let response = new Response();
+    response.add({text: `Hey ${sender.first_name}, ${responseMessage}`});
 
-    await correspondent.send(sender.id, output);
+    // Send the user the output response
+    await correspondent.send(sender.id, response);
 });
 
 export default correspondent
