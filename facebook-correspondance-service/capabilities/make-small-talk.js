@@ -1,10 +1,8 @@
 import request from 'requisition';
-import settings from '../../service-container/configuration/index'
+import settings from '../../service-container/configuration'
 
 const makeSmallTalk = async(input) => {
-    const baseUrl = settings.personalityForge.baseUrl;
-    const apiKey = settings.personalityForge.apiKey;
-    const chatBotId = settings.personalityForge.chatBotId;
+    const {baseUrl, apiKey, chatBotId} = settings.personalityForge;
 
     let smallTalkFetchResponse = await request(`${baseUrl}apiKey=${apiKey}&chatBotID=${chatBotId}&message=${input}&externalID=1`);
     let body = await smallTalkFetchResponse.json();
