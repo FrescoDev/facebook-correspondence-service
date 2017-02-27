@@ -22,6 +22,9 @@ const defaultConfig = {
     baseUrl: 'http://www.personalityforge.com/api/chat/?',
     apiKey: process.env.PF_API_KEY,
     chatBotId: process.env.PF_CHATBOT_ID
+  },
+  domainRoutingService : {
+    baseUrl : 'https://domain-routing-service.herokuapp.com'
   }
 };
 

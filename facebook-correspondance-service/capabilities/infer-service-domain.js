@@ -3,8 +3,6 @@ import settings from '../../service-container/configuration'
 
 const infer = async(input) => {
     const {baseUrl} = settings.domainRoutingService
-        ? settings.domainRoutingService
-        : 'https://domain-routing-service.herokuapp.com'
 
     let requestBody = {
         'content': input
@@ -16,8 +14,8 @@ const infer = async(input) => {
 
     let body = await domainFetchResponse.json();
 
-    if (body.content) {
-        return body.content
+    if (body.domain) {
+        return body.domain
     }
 
     return 'UNKNOWN'
