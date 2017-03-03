@@ -25,6 +25,10 @@ const defaultConfig = {
   },
   domainRoutingService : {
     baseUrl : 'https://domain-routing-service.herokuapp.com'
+  },
+  openWeatherMap : {
+    baseUrl : 'http://api.openweathermap.org/data/2.5/weather?',
+    apiKey : process.env.OWM_API_KEY 
   }
 };
 
