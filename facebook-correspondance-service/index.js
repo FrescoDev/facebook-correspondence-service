@@ -15,7 +15,7 @@ correspondent.on('message', async message => {
         if (location) {
             const {long, lat} = location;
 
-            let weatherDataFetchResult = await request(`${settings.openWeatherMap.baseUrl}lat=${lat}&lon${long}&APPID=${settings.openWeatherMap.apiKey}`);
+            let weatherDataFetchResult = await request(`${settings.openWeatherMap.baseUrl}lat=${lat}&lon=${long}&APPID=${settings.openWeatherMap.apiKey}`);
             let body = await weatherDataFetchResult.json();
 
             console.log(location)
