@@ -22,7 +22,7 @@ correspondent.on('message', async message => {
             console.log(body)
             console.log(`${settings.openWeatherMap.baseUrl}lat=${lat}&lon${long}&APPID=${settings.openWeatherMap.apiKey}`)
 
-            const weatherDescription = body.weather.description;
+            const weatherDescription = body.weather[0].description;
 
             response.add({text: `Looking like it\'s ${weatherDescription}`});
 
