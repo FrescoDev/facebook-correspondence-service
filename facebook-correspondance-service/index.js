@@ -19,7 +19,7 @@ correspondent.on('message', async message => {
             let body = await weatherDataFetchResult.json();
 
             console.log(location)
-            console.log(weatherDataFetchResult)
+            console.log(body)
             console.log(`${settings.openWeatherMap.baseUrl}lat=${lat}&lon${long}&APPID=${settings.openWeatherMap.apiKey}`)
 
             const weatherDescription = body.weather.description;
